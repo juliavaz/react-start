@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
+import { Card, Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 
 const Objects = () => {
     const carros = [
@@ -25,29 +25,32 @@ const Objects = () => {
         { marca: 'Subaru', modelo: 'Impreza', ano: 2018, placa: "BGE 0A34", foto: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/2018_Subaru_Impreza_%28GT7%29_2.0i-S_hatchback_%282018-09-28%29_01.jpg' },
     ];
 
-    return (
+  return (
     <>
+      <Container>
         <div className="App">
-        <h1>Página de Carros</h1><br/>
-
-        <Row>
-          {carros.map((carro) => (
-            <Col md={3} className="mb-3">
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={carro.foto} />
-                <Card.Body>
-                  <Card.Title>{carro.marca}</Card.Title>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                  <ListGroupItem>Modelo: {carro.modelo}</ListGroupItem>
-                  <ListGroupItem>Ano de fabricação: {carro.ano}</ListGroupItem>
-                  <ListGroupItem>Placa: {carro.placa}</ListGroupItem>
-                </ListGroup>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </div>
+          <h1 style={{ padding: "20px" }}>Página de Carros</h1>
+          <Row>
+            {carros.map((carro) => (
+              <Col md={3} className="mb-3">
+                <Card>
+                  <Card.Img variant="top" src={carro.foto} />
+                  <Card.Body>
+                    <Card.Title>{carro.marca}</Card.Title>
+                  </Card.Body>
+                  <ListGroup className="list-group-flush">
+                    <ListGroupItem>Modelo: {carro.modelo}</ListGroupItem>
+                    <ListGroupItem>
+                      Ano de fabricação: {carro.ano}
+                    </ListGroupItem>
+                    <ListGroupItem>Placa: {carro.placa}</ListGroupItem>
+                  </ListGroup>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </div>
+      </Container>
     </>
   );
 };

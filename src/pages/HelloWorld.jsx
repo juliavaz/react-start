@@ -4,7 +4,8 @@ const HelloWorld = (props) => {
     return (
         <div className="App">
             <h1>
-                {props.title}, {props.name}
+                {/* {props.title}, {props.name} */}
+                Hello World, Júlia Vaz
             </h1>
         </div>
     )

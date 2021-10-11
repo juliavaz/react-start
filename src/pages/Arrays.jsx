@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+import { Container, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 
 const Arrays = () => {
     const carros = [
@@ -25,19 +25,23 @@ const Arrays = () => {
         { marca: 'Subaru', modelo: 'Impreza', ano: 2018, placa: "BGE 0A34", foto: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/2018_Subaru_Impreza_%28GT7%29_2.0i-S_hatchback_%282018-09-28%29_01.jpg' },
     ];
     
-    return (
+  return (
     <>
+      <Container>
         <div className="App">
-        <h1>Página de Array de Carros</h1><br/>
-        <>
+        <h1 style={{ padding: "20px" }}>Página de Array de Carros</h1>
+          <Row style={{ width: "25rem" }}>
             <ListGroup>
-                <ListGroupItem> [ marca - modelo - ano - placa ]</ListGroupItem>
-                {carros.map((carro) => (
-                    <ListGroupItem> [ {carro.marca} - {carro.modelo} - {carro.ano} - {carro.placa} ] </ListGroupItem>
-                ))}
+              <ListGroupItem style={{ fontStyle: "oblique" }}> [ marca - modelo - ano - placa ]</ListGroupItem>
+              {carros.map((carro) => (
+                <ListGroupItem>
+                  [ {carro.marca} - {carro.modelo} - {carro.ano} - {carro.placa} ]
+                </ListGroupItem>
+              ))}
             </ListGroup>
-        </>
-      </div>
+          </Row>
+        </div>
+      </Container>
     </>
   );
 };

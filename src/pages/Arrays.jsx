@@ -34,8 +34,8 @@ const Arrays = () => {
             <ListGroup>
               <ListGroupItem style={{ fontStyle: "oblique" }}> [ marca - modelo - ano - placa ]</ListGroupItem>
               {carros.map((carro) => (
-                <ListGroupItem>
-                  [ {carro.marca} - {carro.modelo} - {carro.ano} - {carro.placa} ]
+                <ListGroupItem>                  
+                  [ {carro.marca} - {carro.modelo} - {carro.ano} - {carro.placa} {" "} ]
                 </ListGroupItem>
               ))}
             </ListGroup>
